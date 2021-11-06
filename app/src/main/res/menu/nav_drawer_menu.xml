@@ -2,15 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/item1"
+        android:id="@+id/view1Fragment"
         android:title="ITEM1" />
 
     <item
-        android:id="@+id/item2"
+        android:id="@+id/view2Fragment"
         android:title="ITEM2" />
 
     <item
-        android:id="@+id/item3"
+        android:id="@+id/view3Fragment"
         android:title="ITEM3" />
 
 
