@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/view1Fragment"
-        android:name="com.example.turbo.View1Fragment"
+        android:name="com.example.turbo.ui.fragment1.View1Fragment"
         android:label="fragment_view1"
         tools:layout="@layout/fragment_view1" />
     <fragment

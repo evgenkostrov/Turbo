@@ -24,42 +24,60 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
     lateinit var toggle: ActionBarDrawerToggle
-    lateinit var bottom:BottomNavigationView
-    lateinit var navController:NavController
+    lateinit var appBarConfiguration: AppBarConfiguration
+    lateinit var bottom: BottomNavigationView
+    lateinit var navController: NavController
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding= ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment
         navController = navHostFragment.findNavController()
+
 
         /**
          *       Settings drawer
          */
 
-        toggle=ActionBarDrawerToggle(this,binding.drawerLayout, R.string.open, R.string.close )
+        toggle = ActionBarDrawerToggle(this, binding.drawerLayout, R.string.open, R.string.close)
         binding.drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 //        setOf(R.id.view1Fragment,R.id.view3Fragment,R.id.view3Fragment)
-        val appBarConfiguration= AppBarConfiguration(navGraph = navController.graph,drawerLayout = binding.drawerLayout)
-        setupActionBarWithNavController(navController,appBarConfiguration)
+        appBarConfiguration = AppBarConfiguration(
+            navGraph = navController.graph,
+            drawerLayout = binding.drawerLayout
+        )
+        setupActionBarWithNavController(navController, appBarConfiguration)
 
-        binding.navView.setNavigationItemSelectedListener {
-            when(it.itemId){
-                R.id.view1Fragment-> {Toast.makeText(applicationContext,
-                    "Clicked item 1",Toast.LENGTH_SHORT).show()
-                navController.navigate(R.id.view1Fragment)}
-                R.id.view2Fragment -> {Toast.makeText(applicationContext,
-                    "Clicked item 2",Toast.LENGTH_SHORT).show()
-                navController.navigate(R.id.view2Fragment)}
-                R.id.view3Fragment -> {Toast.makeText(applicationContext,
-                    "Clicked item 3",Toast.LENGTH_SHORT).show()
-                    navController.navigate(R.id.view3Fragment)}
+        binding.navView.setNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.view1Fragment -> {
+                    Toast.makeText(
+                        applicationContext,
+                        "Clicked item 1", Toast.LENGTH_SHORT
+                    ).show()
+                    navController.navigate(R.id.view1Fragment)
+                }
+                R.id.view2Fragment -> {
+                    Toast.makeText(
+                        applicationContext,
+                        "Clicked item 2", Toast.LENGTH_SHORT
+                    ).show()
+                    navController.navigate(R.id.view2Fragment)
+                }
+                R.id.view3Fragment -> {
+                    Toast.makeText(
+                        applicationContext,
+                        "Clicked item 3", Toast.LENGTH_SHORT
+                    ).show()
+                    navController.navigate(R.id.view3Fragment)
+                }
             }
             true
         }
@@ -68,13 +86,12 @@ class MainActivity : AppCompatActivity() {
          *       Settings bottom
          */
 
-        bottom=findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+        bottom = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         bottom.setupWithNavController(navController)
-//        binding.bottomNavigationView.background = null
-//        binding.bottomNavigationView.menu.getItem(2).isEnabled = false
-        bottom.setOnItemSelectedListener {     item ->
-            when(item.itemId){
-
+        binding.bottomNavigationView.background = null
+        binding.bottomNavigationView.menu.getItem(2).isEnabled = false
+        bottom.setOnItemSelectedListener { item ->
+            when (item.itemId) {
                 R.id.miHome -> {
                     binding.tv.text = "Home"
                     true
@@ -94,7 +111,7 @@ class MainActivity : AppCompatActivity() {
                     navController.navigate(R.id.view3Fragment)
                     true
                 }
-                else->false
+                else -> false
             }
         }
 
@@ -103,36 +120,38 @@ class MainActivity : AppCompatActivity() {
          */
 
         val badge = binding.bottomNavigationView.getOrCreateBadge(R.id.miHome)
-        var count=1
-        fun countMe():String{return count++.toString()}
-        binding.fab.setOnClickListener{
-                view->
-            Snackbar.make(view,"Here", Snackbar.LENGTH_LONG)
-                .setAction("Action"){count-1}
+        var count = 1
+        fun countMe(): String {
+            return count++.toString()
+        }
+        binding.fab.setOnClickListener { view ->
+            Snackbar.make(view, "Here", Snackbar.LENGTH_LONG)
+                .setAction("Action") { count - 1 }
                 .show()
-            binding.tv.text="${badge.isVisible}"
-            binding.tv.append(countMe())}
+            binding.tv.text = "${badge.isVisible}"
+            binding.tv.append(countMe())
+        }
 
-        badge.badgeGravity= BadgeDrawable.TOP_START
-        badge.backgroundColor= Color.GREEN
+        badge.badgeGravity = BadgeDrawable.TOP_START
+        badge.backgroundColor = Color.GREEN
         badge.isVisible = true
-           // count%2==0
+        // count%2==0
         badge.number = count
-        binding.button.setOnClickListener{
-            binding.bottomAppBar.fabAlignmentMode= BottomAppBar.FAB_ALIGNMENT_MODE_END
-            binding.bottomAppBar.cradleVerticalOffset= 250F
+        binding.button.setOnClickListener {
+            binding.bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_END
+            binding.bottomAppBar.cradleVerticalOffset = 250F
 
-            binding.bottomAppBar.cradleVerticalOffset= 1F
-            binding.bottomAppBar.fabAlignmentMode=BottomAppBar.FAB_ALIGNMENT_MODE_CENTER
+            binding.bottomAppBar.cradleVerticalOffset = 1F
+            binding.bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_CENTER
 
-            badge.clearNumber()}
+            badge.clearNumber()
+        }
 
     }
 
 
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if(toggle.onOptionsItemSelected(item)){
+        if (toggle.onOptionsItemSelected(item)) {
             return true
         }
         return super.onOptionsItemSelected(item)
