@@ -1,5 +1,10 @@
 package com.example.turbo.model
 
+import android.content.Context
+import android.content.res.Resources
+import android.provider.Settings.Global.getString
+
+import com.example.turbo.R
 import java.util.*
 
 typealias AkbsListener = (akbs:List<Akb>)->Unit
@@ -10,17 +15,14 @@ class AkbsService {
     private val listeners= mutableSetOf<AkbsListener>()
 
     init {
-        akbs = listOf<Akb>(
-            Akb(0,  IMAGES[(0..6).shuffled().last()], "VAIPER", "Min", 55, 3950),
-            Akb(1, IMAGES[(0..6).shuffled().last()], "TUBOR", "Min", 60, 5800),
-            Akb(2, IMAGES[(0..6).shuffled().last()], "TITAN ARCTIC", "Min", 65, 8300),
-            Akb(3,IMAGES[(0..6).shuffled().last()], "VAIPER", "Min", 55, 3950),
-            Akb(4, IMAGES[(0..6).shuffled().last()], "TUBOR", "Min", 60, 5800),
-            Akb(5, IMAGES[(0..6).shuffled().last()], "TITAN ARCTIC", "Min", 65, 8300),
-            Akb(6, IMAGES[(0..6).shuffled().last()], "VAIPER", "Min", 55, 3950),
-            Akb(7,IMAGES[(0..6).shuffled().last()], "TUBOR", "Min", 60, 5800),
-            Akb(8, IMAGES[(0..6).shuffled().last()], "TITAN ARCTIC", "Min", 65, 8300),
-        ).toMutableList()
+        akbs = (0..100).map { Akb(it,
+            IMAGES[(0..6).shuffled().last()],
+            BAT[(0..9).shuffled().last()],
+            CAT[(0..3).shuffled().last()],
+            60,
+            (5000..15000 step 100).shuffled().last()) }
+
+        .toMutableList()
     }
 
     fun getAkbs():List<Akb>{
@@ -67,5 +69,27 @@ class AkbsService {
             "https://tubor.ru/upload/iblock/061/0617e4f87242faafc15dd7ae8944d0c7.png",
             "https://tubor.ru/upload/iblock/a6c/a6cfd41632c0c70d089ac828361a90c9.png"
         )
+        private val CAT = mutableListOf<String>(
+            "для интенсивной эксплуатации в жестких погодных условиях, плохих дорог и мест хранения техники транспорта",
+            "для автомобилей с минимальным набором электрооборудования",
+            "для автомобилей, оборудованных системой старт-стоп, имеющих большое количество энергопотребителей, работающих в такси или с длительными простоями, а также систем ИПБ",
+            "для эксплуатации на водном транспорте, (река, море), а также в системах ИПБ"
+        )
+
+        private val BAT = mutableListOf<String>(
+            "TUBOR AQUATECH",
+            "TUBOR SYNERGY",
+            "TUBOR STANDART",
+            "TUBOR TRUCK",
+            "TUBOR EFB",
+            "TUBOR ASIA",
+            "TUBOR GEL",
+            "TITAN ARCTIC",
+            "ARCTIC ASIA",
+            "VAIPER",
+
+
+        )
+
     }
 }

@@ -1,17 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:checkableBehavior="single">
+        <item android:title="Вид представления списков">
+            <menu>
+                <item
+                    android:id="@+id/view1Fragment"
+                    android:checkable="true"
+                    android:icon="@drawable/ic_battery_svgrepo_com"
+                    android:title="Вертикальный список" />
 
-    <item
-        android:id="@+id/view1Fragment"
-        android:title="ITEM1" />
+                <item
+                    android:id="@+id/view2Fragment"
+                    android:checkable="true"
+                    android:icon="@drawable/ic_battery_svgrepo_com"
+                    android:title="Горизонтальный список" />
 
-    <item
-        android:id="@+id/view2Fragment"
-        android:title="ITEM2" />
-
-    <item
-        android:id="@+id/view3Fragment"
-        android:title="ITEM3" />
-
-
+                <item
+                    android:id="@+id/view3Fragment"
+                    android:checkable="true"
+                    android:icon="@drawable/ic_battery_svgrepo_com"
+                    android:title="Карты" />
+                <item
+                    android:checkable="true"
+                    android:icon="@drawable/ic_battery_svgrepo_com"
+                    android:title="Корзина" />
+            </menu>
+        </item>
+    </group>
+    <group android:checkableBehavior="single">
+        <item android:title="Ваш профайл">
+            <menu>
+                <item
+                    android:checkable="true"
+                    android:icon="@drawable/ic_battery_svgrepo_com"
+                    android:title="Ваши настройки" />
+                <item
+                    android:id="@+id/menu_logout"
+                    android:checkable="true"
+                    android:icon="@drawable/ic_battery_svgrepo_com"
+                    android:title="Выход из профиля" />
+            </menu>
+        </item>
+    </group>
+    <group android:id="@+id/quiz_group">
+        <item
+            android:id="@+id/quiz"
+            android:title="Квиз" />
+    </group>
+    <group android:id="@+id/quit_group">
+        <item
+            android:id="@+id/menu_button"
+            android:title="" />
+    </group>
 </menu>

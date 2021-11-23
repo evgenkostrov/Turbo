@@ -10,60 +10,125 @@
     <ImageView
         android:id="@+id/image_view_akb"
         android:layout_width="96dp"
-        android:layout_height="96dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="14dp"
+        android:layout_height="76dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
         tools:src="@drawable/ic_baseline_desktop_access_disabled_24"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <ImageView
         android:id="@+id/image_view_context_menu"
-        android:layout_width="32dp"
-        android:layout_height="96dp"
-        android:layout_marginEnd="14dp"
-        android:src="@drawable/ic_baseline_arrow_left_24"
+        android:layout_width="22dp"
+        android:layout_height="76dp"
+        android:layout_marginEnd="2dp"
         android:background="?android:attr/selectableItemBackgroundBorderless"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/ic_baseline_arrow_left_24"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.333" />
+
     <TextView
         android:id="@+id/text_view_name"
-        tools:text="TITAN"
-        android:layout_width="0dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:layout_marginStart="10dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/chip_view_price"
+
         app:layout_constraintStart_toEndOf="@+id/image_view_akb"
         app:layout_constraintTop_toTopOf="@id/image_view_akb"
-        app:layout_constraintEnd_toStartOf="@+id/image_view_context_menu"/>
+        tools:text="TITAN" />
+
     <TextView
-        android:id="@+id/text_view_category"
-        tools:text="Standard"
+        android:id="@+id/text_view_category3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:textSize="9sp"
+        app:layout_constraintEnd_toStartOf="@+id/chip_view_price"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/image_view_akb"
         app:layout_constraintTop_toBottomOf="@id/text_view_name"
-        app:layout_constraintEnd_toStartOf="@+id/image_view_context_menu"/>
-    <com.google.android.material.chip.Chip
-        android:id="@+id/chip_view_price"
-        android:layout_width="wrap_content"
+        android:text="Полярность: прямая Размеры 245х175х190" />
+
+    <TextView
+        android:id="@+id/text_view_category"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        tools:text="Standard"
+        android:layout_marginTop="12dp"
+        android:visibility="invisible"
+        android:textSize="9sp"
+        app:layout_constraintEnd_toStartOf="@+id/chip_view_price"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/image_view_akb"
         app:layout_constraintTop_toBottomOf="@id/text_view_name"
+        tools:text="Standard" />
+
+    <Button
+        android:id="@+id/chip_view_price"
+        android:layout_width="73dp"
+        android:layout_height="38dp"
         app:layout_constraintEnd_toStartOf="@+id/image_view_context_menu"
-        />
-    <com.google.android.material.chip.Chip
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/text_view_name"
+        app:layout_constraintTop_toTopOf="@id/image_view_akb"
+        tools:text="5000"
+       />
+
+    <Button
+        android:id="@+id/chip_view_price2"
+        android:backgroundTint="@color/green"
+android:text="5000"
+        android:layout_width="73dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintEnd_toStartOf="@+id/image_view_context_menu"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/text_view_name"
+        app:layout_constraintTop_toBottomOf="@id/chip_view_price"
+        tools:text="5000" />
+
+    <com.google.android.material.chip.ChipGroup
         android:id="@+id/chip_view_capacity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="35dp"
-        tools:text="55"
+app:singleSelection="true"
+        style="@style/CustomChipStyle"
         app:layout_constraintStart_toEndOf="@+id/image_view_akb"
         app:layout_constraintTop_toBottomOf="@id/chip_view_price"
-        app:layout_constraintEnd_toStartOf="@+id/image_view_context_menu"
-        />
+        app:layout_constraintEnd_toStartOf="@+id/chip_view_price"
+        >
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip6"
+            style="@style/CustomChipStyle"
+            android:textSize="10sp"
+            android:text="75 Ah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip5"
+            style="@style/CustomChipStyle"
+            android:textSize="10sp"
+            android:text="60 Ah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip4"
+            style="@style/CustomChipStyle"
+            android:textSize="10sp"
+            android:text="55 Ah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.chip.ChipGroup>
+
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrier"
         android:layout_width="wrap_content"

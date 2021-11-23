@@ -9,11 +9,15 @@ import com.example.turbo.R
 import com.example.turbo.databinding.FragmentView1Binding
 import com.example.turbo.model.AkbsListener
 import com.example.turbo.model.AkbsService
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class View1Fragment : Fragment(R.layout.fragment_view1) {
 
     private lateinit var binding: FragmentView1Binding
-    private lateinit var adapter: AkbsAdapter
+    @Inject
+  lateinit var adapter: AkbsAdapter
 
     private val akbsService: AkbsService
         get() = (activity?.applicationContext as App).akbsService
@@ -22,7 +26,7 @@ class View1Fragment : Fragment(R.layout.fragment_view1) {
         super.onViewCreated(view, savedInstanceState)
 
         binding = FragmentView1Binding.bind(view)
-        adapter = AkbsAdapter()
+//        adapter = adapter
 
         val layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.layoutManager = layoutManager
