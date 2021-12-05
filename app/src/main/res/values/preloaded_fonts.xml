@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/amita_bold</item>
+        <item>@font/anonymous_pro</item>
+        <item>@font/bubbler_one</item>
+        <item>@font/cabin_medium</item>
+        <item>@font/cormorant_sc_medium</item>
+        <item>@font/lekton</item>
+        <item>@font/montserrat</item>
+        <item>@font/poiret_one</item>
+    </array>
+</resources>
