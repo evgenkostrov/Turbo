@@ -62,10 +62,10 @@ class AkbsService {
     companion object {
         private val IMAGES = mutableListOf<String>(
             "https://tubor.ru/upload/iblock/097/0979d436c81cb23a2378d5e7a7b5118a.png",
-            "https://tubor.ru/upload/iblock/179/179373536ce79a8ee037b31edf595ed0.png",
+            "https://tubor.ru/upload/iblock/097/0979d436c81cb23a2378d5e7a7b5118a.png",
             "https://tubor.ru/upload/iblock/65b/65b428e0d7c46024166f47975bd00aca.png",
             "https://tubor.ru/upload/iblock/c5e/c5edf7c7e90eafdd2e4723615004ad98.png",
-            "https://tubor.ru/upload/iblock/035/035f2ee00416e1b3f3a85f5be56cd67e.png",
+            "https://tubor.ru/upload/iblock/097/0979d436c81cb23a2378d5e7a7b5118a.png",
             "https://tubor.ru/upload/iblock/061/0617e4f87242faafc15dd7ae8944d0c7.png",
             "https://tubor.ru/upload/iblock/a6c/a6cfd41632c0c70d089ac828361a90c9.png"
         )

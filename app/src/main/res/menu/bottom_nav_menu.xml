@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
-    <item android:id="@+id/miHome"
+    <item android:id="@+id/categoryFragment"
         android:title="Home"
         android:icon="@drawable/ic_home"
         app:showAsAction="ifRoom"/>

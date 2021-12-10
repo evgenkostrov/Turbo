@@ -1,4 +1,4 @@
-package com.example.turbo.ui
+package com.example.turbo.ui.fragment
 
 import android.os.Bundle
 import android.view.View
@@ -42,12 +42,16 @@ class View2Fragment : Fragment(R.layout.fragment_view2) {
                 .placeholder(R.drawable.ic_baseline_desktop_access_disabled_24)
                 .error(R.drawable.ic_baseline_desktop_access_disabled_24)
                 .into(binding.iv2)
+
+            binding.textView.text=list.toString()
         }
 
         serviceScope.launch {
             fetchData()
         }
         var count = 0
+
+
 
 
 

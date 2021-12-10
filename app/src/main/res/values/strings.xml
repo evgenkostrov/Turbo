@@ -5,4 +5,27 @@
     <string name="hello_blank_fragment">View1</string>
 
 
+    <string-array name="category1">
+        <item>Стартерные</item>
+        <item>Тяговые</item>
+        <item>Для лодок</item>
+        <item>Для систем</item>
+    </string-array>
+    <string-array name="category2">
+        <item>Автомобильные</item>
+        <item>Промышленные</item>
+        <item>Водного трансп.</item>
+        <item>Старт/Стоп</item>
+    </string-array>
+
+    <integer-array name="category_drawable">
+        <item>@drawable/ic_baseline_key_24</item>
+        <item>@drawable/ic_baseline_local_shipping_24</item>
+        <item>@drawable/ic_baseline_anchor_24</item>
+        <item>@drawable/ic_baseline_not_started_24</item>
+
+    </integer-array>
+
+
+
 </resources>

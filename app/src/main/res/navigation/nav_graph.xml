@@ -3,16 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/view1Fragment">
+    app:startDestination="@id/categoryFragment">
 
     <fragment
         android:id="@+id/view1Fragment"
-        android:name="com.example.turbo.ui.fragment1.View1Fragment"
+        android:name="com.example.turbo.ui.fragment.View1Fragment"
         android:label="fragment_view1"
         tools:layout="@layout/fragment_view1" />
     <fragment
         android:id="@+id/view2Fragment"
-        android:name="com.example.turbo.ui.View2Fragment"
+        android:name="com.example.turbo.ui.fragment.View2Fragment"
         android:label="fragment_view2"
         tools:layout="@layout/fragment_view2" />
     <fragment
@@ -20,4 +20,11 @@
         android:name="com.example.turbo.View3Fragment"
         android:label="fragment_view3"
         tools:layout="@layout/fragment_view3" />
+
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.example.turbo.ui.fragment.CategoryFragment"
+        android:label="category"
+        tools:layout="@layout/fragment_category" />
+
 </navigation>

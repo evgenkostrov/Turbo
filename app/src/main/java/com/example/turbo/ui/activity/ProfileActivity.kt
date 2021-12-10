@@ -52,6 +52,11 @@ class ProfileActivity : AppCompatActivity() {
         binding = ActivityProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        cropActivityResultLauncher = registerForActivityResult(cropActivityResultContract) {
+            it?.let { uri ->
+                currentImageUri = uri
+            }
+        }
 
 
         auth = FirebaseAuth.getInstance()
@@ -62,11 +67,7 @@ class ProfileActivity : AppCompatActivity() {
         }
 
         binding.ivProfile.setOnClickListener {
-            cropActivityResultLauncher = registerForActivityResult(cropActivityResultContract) {
-                it?.let { uri ->
-                    currentImageUri = uri
-                }
-            }
+
             cropActivityResultLauncher.launch(null)
         }
         binding.btnChooseUpdate.setOnClickListener {

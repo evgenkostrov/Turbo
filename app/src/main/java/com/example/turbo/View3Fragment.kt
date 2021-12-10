@@ -2,58 +2,43 @@ package com.example.turbo
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
+import com.example.turbo.databinding.FragmentView3Binding
+import com.example.turbo.model.AkbsListener
+import com.example.turbo.model.AkbsService
+import com.example.turbo.ui.adapter.AdapterCard
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+@AndroidEntryPoint
+class View3Fragment : Fragment(R.layout.fragment_view3) {
 
-/**
- * A simple [Fragment] subclass.
- * Use the [View3Fragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class View3Fragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var binding: FragmentView3Binding
+    @Inject
+    lateinit var adapter: AdapterCard
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+    private val akbsService: AkbsService
+        get() = (activity?.applicationContext as App).akbsService
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding = FragmentView3Binding.bind(view)
+        val layoutManager = GridLayoutManager(requireContext(),2)
+        binding.recyclerView2.layoutManager = layoutManager
+        binding.recyclerView2.adapter = adapter
+
+        akbsService.addListener(akbsListener)
+
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_view3, container, false)
+    override fun onDestroy() {
+        super.onDestroy()
+        akbsService.removeListener(akbsListener)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment View3Fragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            View3Fragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private val akbsListener: AkbsListener = {
+        adapter.akbs = it
     }
 }

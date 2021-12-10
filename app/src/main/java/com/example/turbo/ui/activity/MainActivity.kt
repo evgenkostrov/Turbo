@@ -57,13 +57,14 @@ class MainActivity : AppCompatActivity() {
         toggle.syncState()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
 //        setOf(R.id.view1Fragment,R.id.view3Fragment,R.id.view3Fragment)
         appBarConfiguration = AppBarConfiguration(
             navGraph = navController.graph,
             drawerLayout = binding.drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
-        actionBar?.setDisplayShowTitleEnabled(true)
+        supportActionBar?.setDisplayShowTitleEnabled(true)
 
 
 //        actionBar?.subtitle = Html.fromHtml("<font color='#FFBF00'>Here</font>")
@@ -97,6 +98,15 @@ class MainActivity : AppCompatActivity() {
                     navController.navigate(R.id.view1Fragment)
                     binding.drawerLayout.closeDrawer(GravityCompat.START)
                 }
+                R.id.categoryFragment -> {
+                    Toast.makeText(
+                        applicationContext,
+                        "Clicked item 1tttf", Toast.LENGTH_SHORT
+                    ).show()
+                    navController.navigate(R.id.categoryFragment)
+                    binding.drawerLayout.closeDrawer(GravityCompat.START)
+                }
+
                 R.id.view2Fragment -> {
                     Toast.makeText(
                         applicationContext,
@@ -125,10 +135,11 @@ class MainActivity : AppCompatActivity() {
         bottom.setupWithNavController(navController)
         binding.bottomNavigationView.background = null
         binding.bottomNavigationView.menu.getItem(2).isEnabled = false
-        bottom.setOnNavigationItemReselectedListener { item ->
+        bottom.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.miHome -> {
+                R.id.categoryFragment -> {
                     binding.tv.text = "Home"
+                    navController.navigate(R.id.categoryFragment)
                     true
                 }
                 R.id.view1Fragment -> {
@@ -177,7 +188,7 @@ class MainActivity : AppCompatActivity() {
          *       Settings fab
          */
 
-        val badge = binding.bottomNavigationView.getOrCreateBadge(R.id.miHome)
+        val badge = binding.bottomNavigationView.getOrCreateBadge(R.id.categoryFragment)
         var count = 1
         fun countMe(): String {
             return count++.toString()

@@ -1,10 +1,9 @@
-package com.example.turbo.ui.fragment1
+package com.example.turbo.ui.fragment
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestManager
 import com.example.turbo.R
 import com.example.turbo.databinding.RowItemAkbBinding
