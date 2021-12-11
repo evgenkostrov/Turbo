@@ -39,6 +39,14 @@
         <item name="android:listDivider">@color/green</item>
 
     </style>
+
+    <style name="ShapeAppearanceOverlay.CardView" parent="">
+        <item name="cornerFamilyBottomLeft">rounded</item>
+        <item name="cornerFamilyBottomRight">rounded</item>
+        <item name="cornerSizeBottomLeft">20%</item>
+        <item name="cornerSizeBottomRight">20%</item>
+    </style>
+
 <!--    <declare-styleable name="NavigationView">-->
 <!--        <attr name="subheaderColor"> />-->
 

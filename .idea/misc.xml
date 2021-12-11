@@ -26,11 +26,13 @@
         <entry key="app/src/main/res/drawable/scrollbar.xml" value="0.2015625" />
         <entry key="app/src/main/res/font/alpha.xml" value="0.28489583333333335" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.32065217391304346" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.268018018018018" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.2" />
         <entry key="app/src/main/res/layout/button.xml" value="0.20364583333333333" />
+        <entry key="app/src/main/res/layout/fragment_card.xml" value="0.125" />
         <entry key="app/src/main/res/layout/fragment_category.xml" value="0.19791666666666666" />
+        <entry key="app/src/main/res/layout/fragment_pager.xml" value="0.125" />
         <entry key="app/src/main/res/layout/fragment_view1.xml" value="0.190625" />
         <entry key="app/src/main/res/layout/fragment_view2.xml" value="0.22509057971014493" />
         <entry key="app/src/main/res/layout/fragment_view3.xml" value="0.22509057971014493" />
@@ -38,7 +40,9 @@
         <entry key="app/src/main/res/layout/nav_header.xml" value="0.33" />
         <entry key="app/src/main/res/layout/row_category.xml" value="0.47534516765285995" />
         <entry key="app/src/main/res/layout/row_item_akb.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/row_item_card.xml" value="0.125" />
         <entry key="app/src/main/res/layout/row_item_horizint.xml" value="0.23731884057971014" />
+        <entry key="app/src/main/res/layout/row_item_pager.xml" value="0.25" />
         <entry key="app/src/main/res/layout/row_product.xml" value="0.19427083333333334" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.190625" />
         <entry key="app/src/main/res/menu/nav_drawer_menu.xml" value="0.35572916666666665" />

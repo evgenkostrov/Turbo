@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fon"
     tools:context=".ui.activity.ProfileActivity">
 
     <TextView
@@ -37,8 +38,8 @@
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/ivProfile"
         android:layout_marginTop="16dp"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         app:civ_border_width="2dp"
         app:civ_border_color="#FF000000"
         app:layout_constraintEnd_toEndOf="parent"

@@ -1,4 +1,4 @@
-package com.example.turbo.ui.fragment
+package com.example.turbo.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

@@ -3,28 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/categoryFragment">
+    app:startDestination="@id/viewFragment">
 
     <fragment
-        android:id="@+id/view1Fragment"
-        android:name="com.example.turbo.ui.fragment.View1Fragment"
-        android:label="fragment_view1"
-        tools:layout="@layout/fragment_view1" />
-    <fragment
-        android:id="@+id/view2Fragment"
-        android:name="com.example.turbo.ui.fragment.View2Fragment"
-        android:label="fragment_view2"
-        tools:layout="@layout/fragment_view2" />
-    <fragment
-        android:id="@+id/view3Fragment"
-        android:name="com.example.turbo.View3Fragment"
-        android:label="fragment_view3"
-        tools:layout="@layout/fragment_view3" />
-
+        android:id="@+id/viewFragment"
+        android:name="com.example.turbo.ui.fragment.ViewFragment"
+        android:label="Вертикальный каталог"
+        tools:layout="@layout/fragment_view" />
     <fragment
         android:id="@+id/categoryFragment"
         android:name="com.example.turbo.ui.fragment.CategoryFragment"
-        android:label="category"
+        android:label="Список по категориям"
         tools:layout="@layout/fragment_category" />
+    <fragment
+        android:id="@+id/cardFragment"
+        android:name="com.example.turbo.ui.fragment.CardFragment"
+        android:label="Карточный список"
+        tools:layout="@layout/fragment_card" />
+    <fragment
+        android:id="@+id/pagerFragment"
+        android:name="com.example.turbo.ui.fragment.PagerFragment"
+        android:label="Горизонтальный каталог"
+        tools:layout="@layout/fragment_pager" />
 
 </navigation>

@@ -78,11 +78,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.navView.menu.findItem(R.id.menu_button).setActionView(R.layout.button)
         binding.navView.menu.findItem(R.id.menu_button).actionView.setPadding(50,0,100,0)
-
         binding.navView.menu.findItem(R.id.menu_button).actionView.setOnClickListener {
             Toast.makeText(
                 applicationContext,
-                "Clicked item 3", Toast.LENGTH_SHORT
+                "Выход из приложения", Toast.LENGTH_SHORT
             ).show()
             finish()
         }
@@ -90,37 +89,37 @@ class MainActivity : AppCompatActivity() {
 
         binding.navView.setNavigationItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.view1Fragment -> {
+                R.id.viewFragment -> {
                     Toast.makeText(
                         applicationContext,
-                        "Clicked item 1", Toast.LENGTH_SHORT
+                        "Вертикальный каталог", Toast.LENGTH_SHORT
                     ).show()
-                    navController.navigate(R.id.view1Fragment)
+                    navController.navigate(R.id.viewFragment)
                     binding.drawerLayout.closeDrawer(GravityCompat.START)
                 }
                 R.id.categoryFragment -> {
                     Toast.makeText(
                         applicationContext,
-                        "Clicked item 1tttf", Toast.LENGTH_SHORT
+                        "По категориям", Toast.LENGTH_SHORT
                     ).show()
                     navController.navigate(R.id.categoryFragment)
                     binding.drawerLayout.closeDrawer(GravityCompat.START)
                 }
 
-                R.id.view2Fragment -> {
+                R.id.cardFragment -> {
                     Toast.makeText(
                         applicationContext,
-                        "Clicked item 2", Toast.LENGTH_SHORT
+                        "Карточный список", Toast.LENGTH_SHORT
                     ).show()
-                    navController.navigate(R.id.view2Fragment)
+                    navController.navigate(R.id.cardFragment)
                     binding.drawerLayout.closeDrawer(GravityCompat.START)
                 }
-                R.id.view3Fragment -> {
+                R.id.pagerFragment -> {
                     Toast.makeText(
                         applicationContext,
-                        "Clicked item 3", Toast.LENGTH_SHORT
+                        "Горизонтальный каталог", Toast.LENGTH_SHORT
                     ).show()
-                    navController.navigate(R.id.view3Fragment)
+                    navController.navigate(R.id.pagerFragment)
                     binding.drawerLayout.closeDrawer(GravityCompat.START)
                 }
             }
@@ -137,68 +136,39 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavigationView.menu.getItem(2).isEnabled = false
         bottom.setOnItemSelectedListener { item ->
             when (item.itemId) {
+                R.id.viewFragment -> {
+                    navController.navigate(R.id.viewFragment)
+                    true
+                }
                 R.id.categoryFragment -> {
-                    binding.tv.text = "Home"
                     navController.navigate(R.id.categoryFragment)
                     true
                 }
-                R.id.view1Fragment -> {
-                    binding.tv.text = "Search"
-                    navController.navigate(R.id.view1Fragment)
+                R.id.cardFragment -> {
+                    navController.navigate(R.id.cardFragment)
                     true
                 }
-                R.id.view2Fragment -> {
-                    binding.tv.text = "Profile"
-                    navController.navigate(R.id.view2Fragment)
-                    true
-                }
-                R.id.view3Fragment -> {
-                    binding.tv.text = "Settings"
-                    navController.navigate(R.id.view3Fragment)
+                R.id.pagerFragment -> {
+                    navController.navigate(R.id.pagerFragment)
                     true
                 }
                 else -> false
             } }
-//        bottom.setOnItemSelectedListener { item ->
-//            when (item.itemId) {
-//                R.id.miHome -> {
-//                    binding.tv.text = "Home"
-//                    true
-//                }
-//                R.id.view1Fragment -> {
-//                    binding.tv.text = "Search"
-//                    navController.navigate(R.id.view1Fragment)
-//                    true
-//                }
-//                R.id.view2Fragment -> {
-//                    binding.tv.text = "Profile"
-//                    navController.navigate(R.id.view2Fragment)
-//                    true
-//                }
-//                R.id.view3Fragment -> {
-//                    binding.tv.text = "Settings"
-//                    navController.navigate(R.id.view3Fragment)
-//                    true
-//                }
-//                else -> false
-//            }
-//        }
 
         /**
          *       Settings fab
          */
 
-        val badge = binding.bottomNavigationView.getOrCreateBadge(R.id.categoryFragment)
+        val badge = binding.bottomNavigationView.getOrCreateBadge(R.id.viewFragment)
         var count = 1
         fun countMe(): String {
             return count++.toString()
         }
         binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Here", Snackbar.LENGTH_LONG)
-                .setAction("Action") { count - 1 }
+            Snackbar.make(view, "Корзина", Snackbar.LENGTH_LONG)
+                .setAction("Купить") { count - 1 }
                 .show()
-            binding.tv.text = "${badge.isVisible}"
-            binding.tv.append(countMe())
+
         }
 
         badge.badgeGravity = BadgeDrawable.TOP_START
@@ -206,7 +176,7 @@ class MainActivity : AppCompatActivity() {
         badge.isVisible = true
         // count%2==0
         badge.number = count
-        binding.button.setOnClickListener {
+        binding.root.setOnClickListener {
             binding.bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_END
             binding.bottomAppBar.cradleVerticalOffset = 250F
 

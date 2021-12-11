@@ -3,26 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
-    <item android:id="@+id/categoryFragment"
+    <item android:id="@+id/viewFragment"
         android:title="Home"
         android:icon="@drawable/ic_home"
         app:showAsAction="ifRoom"/>
 
-    <item android:id="@+id/view1Fragment"
-        android:title="Search"
+    <item android:id="@+id/categoryFragment"
+        android:title="Category"
         android:icon="@drawable/ic_search"
         app:showAsAction="ifRoom"/>
 
     <item android:id="@+id/placeholder"
         android:title="" />
 
-    <item android:id="@+id/view2Fragment"
-        android:title="Profile"
+    <item android:id="@+id/cardFragment"
+        android:title="Card"
         android:icon="@drawable/ic_person"
         app:showAsAction="ifRoom"/>
 
-    <item android:id="@+id/view3Fragment"
-        android:title="Settings"
+    <item android:id="@+id/pagerFragment"
+        android:title="Pager"
         android:icon="@drawable/ic_settings"
         app:showAsAction="ifRoom"/>
 

@@ -5,26 +5,27 @@
         <item android:title="Вид представления списков">
             <menu>
                 <item
-                    android:id="@+id/view1Fragment"
+                    android:id="@+id/viewFragment"
                     android:checkable="true"
                     android:icon="@drawable/ic_battery_svgrepo_com"
-                    android:title="Вертикальный список" />
+                    android:title="Вертикальный каталог" />
 
                 <item
-                    android:id="@+id/view2Fragment"
+                    android:id="@+id/categoryFragment"
                     android:checkable="true"
                     android:icon="@drawable/ic_battery_svgrepo_com"
-                    android:title="Горизонтальный список" />
+                    android:title="Список по категориям" />
 
                 <item
-                    android:id="@+id/view3Fragment"
+                    android:id="@+id/cardFragment"
                     android:checkable="true"
                     android:icon="@drawable/ic_battery_svgrepo_com"
-                    android:title="Карты" />
+                    android:title="Карточный список" />
                 <item
+                    android:id="@+id/pagerFragment"
                     android:checkable="true"
                     android:icon="@drawable/ic_battery_svgrepo_com"
-                    android:title="Корзина" />
+                    android:title="Горизонтальный каталог" />
             </menu>
         </item>
     </group>
