@@ -1,5 +1,7 @@
 # Turbo Store
 Current stack:  Compose/Coroutones/DaggerHilt/Firebase
+
+
 Features for future implementation: GeneralRefactoring/DetailFragment/ViewModel/Repository/Room/Search/Tests/Ktor(perhaps)/StorePayment/etc
 
 
