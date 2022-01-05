@@ -71,8 +71,9 @@ class ProfileActivity : AppCompatActivity() {
             cropActivityResultLauncher.launch(null)
         }
         binding.btnChooseUpdate.setOnClickListener {
-            updateProfile()
+
                 uploadImageToStorage(user?.uid!!)
+            updateProfile()
         }
 
         binding.signOutBtn.setOnClickListener {
@@ -92,7 +93,7 @@ class ProfileActivity : AppCompatActivity() {
         auth.currentUser?.let { firebaseUser ->
             val displayName = binding.etName.text.toString()
             val profileUpdates = UserProfileChangeRequest.Builder()
-                .setPhotoUri(currentImageUri)
+//                .setPhotoUri(currentImageUri)
                 .setDisplayName(displayName)
                 .build()
             CoroutineScope(Dispatchers.IO).launch {
