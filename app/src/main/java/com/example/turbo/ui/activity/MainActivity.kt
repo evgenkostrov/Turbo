@@ -51,20 +51,18 @@ class MainActivity : AppCompatActivity() {
         /**
          *       Settings drawer
          */
-        binding.navView.bringToFront()
+//        binding.navView.bringToFront()
         toggle = ActionBarDrawerToggle(this, binding.drawerLayout, R.string.open, R.string.close)
         binding.drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-//        setOf(R.id.view1Fragment,R.id.view3Fragment,R.id.view3Fragment)
         appBarConfiguration = AppBarConfiguration(
             navGraph = navController.graph,
             drawerLayout = binding.drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
-        supportActionBar?.setDisplayShowTitleEnabled(true)
+//        supportActionBar?.setDisplayShowTitleEnabled(true)
 
 
 //        actionBar?.subtitle = Html.fromHtml("<font color='#FFBF00'>Here</font>")
@@ -188,13 +186,13 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment
-        navController = navHostFragment.findNavController()
-        return navController.navigateUp(appBarConfiguration)
-                || super.onSupportNavigateUp()
-    }
+//    override fun onSupportNavigateUp(): Boolean {
+//        val navHostFragment =
+//            supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment
+//        navController = navHostFragment.findNavController()
+//        return navController.navigateUp(appBarConfiguration)
+//                || super.onSupportNavigateUp()
+//    }
 
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
